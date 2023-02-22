@@ -1,0 +1,16 @@
+﻿<Properties StartupConfiguration="{58C608D9-ED9C-88A6-0BBD-DD73F07344DA}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CameraBehaviour.cs">
+    <Files>
+      <File FileName="Assets/Scripts/PlayerBehaviour.cs" Line="147" Column="10" />
+      <File FileName="../Apocalypse-Rising-main copy 2/Assets/Scripts/PlayerBehaviour.cs" Line="125" Column="5" />
+      <File FileName="Assets/Scripts/CameraBehaviour.cs" Line="10" Column="6" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="87e7897f-b0ae-4947-af3e-18c4be9b33c7" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

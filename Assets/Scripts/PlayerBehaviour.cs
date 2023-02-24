@@ -23,7 +23,7 @@ public class PlayerBehaviour : MonoBehaviour
     private float wallJumpingCounter;
     private float wallJumpingDuration = 0.4f;
     private Vector2 wallJumpingPower = new Vector2(8f, 16f);
-
+    private ComboCount comboGet;
 
 
     [SerializeField] private Rigidbody2D rb;
@@ -35,6 +35,8 @@ public class PlayerBehaviour : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        GameObject player = GameObject.Find("Player");
+        comboGet = player.GetComponent<ComboCount>();
     }
 
     private bool isGrounded()
@@ -77,12 +79,14 @@ public class PlayerBehaviour : MonoBehaviour
         {
             doublejump = true;
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            comboGet.comboNum += 1;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && !isGrounded() && doublejump)
         {
             doublejump = false;
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            comboGet.comboNum += 1;
 
         }
 
@@ -133,6 +137,15 @@ public class PlayerBehaviour : MonoBehaviour
         return Physics2D.OverlapCircle(wallCheck.position, 0.2f, wallLayer);
     }
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.tag == "Enemy" && rb.position.y > collision.contacts[0].point.y)
+        {
+            doublejump = true;
+            Destroy(collision.collider.gameObject);
+        }
+
+    }
     private void WallSlide()
     {
 
